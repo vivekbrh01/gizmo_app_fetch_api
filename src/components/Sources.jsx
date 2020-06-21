@@ -8,12 +8,13 @@ class Sources extends React.Component {
 		this.state = {
 			sources: null,
 			buttonClicked: "all",
-			view: null,
+			view: props.searchedData ||null,
 		};
 	}
+	
 	randomData(arr) {
 		var arrRandomNum = [];
-		for (let i = 1; i < -5; i++) {
+		for (let i = 1; i <= 5; i++) {
 			var randomIndex = Math.floor(Math.random() * (arr.length - 6));
 			arrRandomNum.push(arr[randomIndex]);
 		}
@@ -37,9 +38,11 @@ class Sources extends React.Component {
 				`https://newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=c8f6f018032d480b9d80af4223dfcb25`
 			)
 				.then((res) => res.json())
-				.then((data) => this.setState({ view: data.articles }));
+				.then((data) => console.log(data));
+			// .then((data) => this.setState({ view: data.articles }));
 		}
 	};
+
 	componentDidMount() {
 		fetch(
 			"https://newsapi.org/v2/sources?language=en&country=us&apiKey=c8f6f018032d480b9d80af4223dfcb25"

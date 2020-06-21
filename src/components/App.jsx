@@ -1,14 +1,19 @@
 import React from "react";
 import Header from "./Header";
-import Sources from "./Sources.jsx";
+// import Sources from "./Sources.jsx";
 
-function App() {
-	return (
-		<>
-			<Header />
-			<Sources />
-		</>
-	);
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<>
+				<Header />
+				{/* <Sources /> */}
+			</>
+		);
+	}
 }
 
 export default App;

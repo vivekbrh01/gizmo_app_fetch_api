@@ -8,7 +8,7 @@ function SourceList(props) {
 					<li>
 						<button
 							className="source_btn"
-							onClick={() => props.handleClick(news.is)}
+							onClick={() => props.handleClick(news.id)}
 						>
 							{news.name}
 						</button>
@@ -18,4 +18,5 @@ function SourceList(props) {
 		</>
 	);
 }
+
 export default SourceList;
